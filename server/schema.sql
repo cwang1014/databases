@@ -5,8 +5,8 @@ USE chat;
 CREATE TABLE IF NOT EXISTS messages (
   /* Describe your table here.*/
   id int NOT NULL AUTO_INCREMENT,
-  users_id varchar(20) NOT NULL,
-  rooms_id varchar(20),
+  userId int NOT NULL,
+  roomId int,
   messageText varchar(255) NOT NULL,
   createdAt varchar(50) NOT NULL,
   PRIMARY KEY (id)
