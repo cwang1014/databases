@@ -12,3 +12,7 @@ const dbConnection = mysql.createConnection({
   password: '',
   database: 'chat',
 });
+
+dbConnection.connect();
+
+module.exports = dbConnection;
