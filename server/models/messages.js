@@ -2,8 +2,12 @@ var db = require('../db');
 
 module.exports = {
   getAll: function (callback) {
-    db.query('SELECT * FROM messages INNER JOIN users ON (messages.user_id=users.id)', (err, messages) => {
-      callback(err, messages);
+    db.query('SELECT * FROM messages INNER JOIN users ON (messages.user_id=users.id) ORDER BY messages.id DESC', (err, messages) => {
+      if (err) {
+        console.log('err', err);
+        callback(err);
+      }
+      callback(null, messages);
     });
   }, // a function which produces all the messages
   create: function (message, callback) {

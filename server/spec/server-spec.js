@@ -82,6 +82,7 @@ describe('Persistent Node Chat Server', () => {
       axios.get(`${API_URL}/messages`)
         .then((response) => {
           const messageLog = response.data;
+          console.log('response', response);
           expect(messageLog[0].messageText).toEqual(message);
           expect(messageLog[0].roomname).toEqual(roomname);
           done();
